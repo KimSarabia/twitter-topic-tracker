@@ -1,0 +1,57 @@
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="#"><i class="fa fa-home"></i></a></li>
+  <li role="presentation"><a ng-click="viewEditForm(user)">Profile</a></li>
+  <li role="presentation"><a ng-click="viewEditForm(user)">Dashboard</a></li>
+  <li role="presentation"><a ng-click="viewEditForm(user)">Logout</a></li>
+</ul>
+
+<!-- <nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">TrendWatch <i class="fa fa-envelope"></i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a ng-click="viewEditForm(user)">Update Profile</a></li>
+      <li><a ui-sref="messaging">Messaging</a></li>
+      <li><a ui-sref="login">Logout</a></li>
+    </ul>
+  </div>
+</nav> -->
+
+  <div id="inner-container">
+    <div id="profileBody">
+      <h1>Hello{{user.name}}!</h1>
+    <div class="row">
+      <div class="col-l6">
+        <div ng-hide="viewEdit">
+          <img ng-src={{user.photo}}>
+          <br>
+          <label class="label" for="">Username:</label> <div class="profInfo" ng-model="user.username">{{user.username}}</div>
+          <br>
+          <label class="label" for="">Name:</label> <div class="profInfo" ng-model="user.name">{{user.name}}</div>
+          <br>
+          <label class="label" or="">Email:</label> <div class="profInfo" ng-model="user.email">{{user.email}}</div>
+        </div>
+        <div class="col-l6">
+          <div>Friends:</div>
+          <ul ng-repeat="user in userArr track by $index">
+            <li>username</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+      <div class="card" ng-show="viewEdit">
+        <form ng-submit="saveEdit()">
+          <label for="">Photo</label>
+          <input ng-model="user.photo">
+          <label for="">Name</label>
+          <input ng-model="user.name">
+          <label for="">Email:</label>
+          <input ng-model="user.email">
+      <button>Submit</button>
+
+    </form>
+
+    </div>
+</div>
+</div>
